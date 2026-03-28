@@ -1,3 +1,4 @@
+// Add your own api here 
 const API_KEY = CONFIG.API_KEY
 const url = "https://newsapi.org/v2/everything?q=";
  
