@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News App</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <nav>  
+        <div class="main-nav container flex">
+            <a href="#" onclick="reload()" class="company_logo">
+                <span class="logo-text">NEWS<span class="logo-dot">.</span></span>
+            </a>
+            <div class="nav-links">
+                <ul class="flex">
+                    <li class="hover-link nav-item" id="ipl" onclick="onNavItemClick('ipl')">IPL</li>
+                    <li class="hover-link nav-item" id="finance" onclick="onNavItemClick('finance')">Finance</li>
+                    <li class="hover-link nav-item" id="Politics" onclick="onNavItemClick('politics')">Politics</li>
+                </ul>
+            </div>
+            <div class="search-bar flex">
+                <div class="search-wrapper">
+                    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    <input id="search-text" type="text" class="news-input" placeholder="Search stories...">
+                </div>
+                <button class="search-button" id="search-button">Search</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero-bar container">
+        <p class="date-label" id="live-date"></p>
+        <span class="divider"></span>
+        <p class="tagline">Stay informed. Stay ahead.</p>
+    </div>
+
+    <main>
+        <div class="cards-container container flex" id="cards-container"></div>
+    </main>
+
+    <template id="tempelate-news-card">
+        <div class="card">
+            <div class="card-header">
+                <img src="https://placehold.co/400x200" alt="news-image" id="news-img">
+                <div class="card-tag">News</div>
+            </div>
+            <div class="card-content">
+                <h6 class="news-source" id="news-source">Source · Date</h6>
+                <h3 id="news-title">Article Title</h3>
+                <p class="news-desc" id="news-desc">Article description goes here.</p>
+                <div class="card-footer">
+                    <span class="read-more">Read More →</span>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <script>
+        // Live date
+        const d = new Date();
+        document.getElementById('live-date').textContent = d.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+    </script>
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+    
+</body>
+</html>

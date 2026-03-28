@@ -1,0 +1,370 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-text-color: #0d1b2a;
+    --secondary-text-color: #5a6a7a;
+    --accent-color: #e63946;
+    --accent-color-dark: #b52b37;
+    --bg: #f7f4f0;
+    --nav-bg: #0d1b2a;
+    --card-bg: #ffffff;
+    --border: #e8e2d9;
+    --tag-bg: rgba(230, 57, 70, 0.1);
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    color: var(--primary-text-color);
+    background-color: var(--bg);
+    min-height: 100vh;
+}
+
+p {
+    font-family: "DM Sans", sans-serif;
+    color: var(--secondary-text-color);
+    line-height: 1.65rem;
+    font-weight: 400;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    max-width: 1180px;
+    margin-inline: auto;
+    overflow: hidden;
+    padding-inline: 24px;
+}
+
+
+
+nav {
+    background-color: var(--nav-bg);
+    position: sticky;
+    top: 0;
+    z-index: 99;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.25);
+}
+
+.main-nav {
+    justify-content: space-between;
+    padding-block: 16px;
+    gap: 24px;
+}
+
+
+.logo-text {
+    font-family: "Playfair Display", serif;
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.logo-dot {
+    color: var(--accent-color);
+}
+
+
+.nav-links ul {
+    gap: 8px;
+}
+
+.hover-link {
+    cursor: pointer;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    padding: 7px 14px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.hover-link:hover {
+    color: #ffffff;
+    background-color: rgba(255,255,255,0.08);
+}
+
+.nav-item.active {
+    color: #fff;
+    background-color: var(--accent-color);
+}
+
+
+.search-bar {
+    gap: 10px;
+}
+
+.search-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-icon {
+    position: absolute;
+    left: 12px;
+    color: rgba(255,255,255,0.4);
+    pointer-events: none;
+}
+
+.news-input {
+    width: 220px;
+    height: 38px;
+    padding-left: 36px;
+    padding-right: 12px;
+    border-radius: 6px;
+    border: 1.5px solid rgba(255,255,255,0.15);
+    background-color: rgba(255,255,255,0.07);
+    color: #fff;
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    outline: none;
+}
+
+.news-input::placeholder {
+    color: rgba(255,255,255,0.35);
+}
+
+.news-input:focus {
+    border-color: var(--accent-color);
+    background-color: rgba(255,255,255,0.1);
+}
+
+.search-button {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 9px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border: none;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    white-space: nowrap;
+}
+
+.search-button:hover {
+    background-color: var(--accent-color-dark);
+    transform: translateY(-1px);
+}
+
+.search-button:active {
+    transform: translateY(0);
+}
+
+
+
+.hero-bar {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding-block: 14px;
+    border-bottom: 1px solid var(--border);
+    overflow: visible;
+}
+
+.date-label {
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--secondary-text-color);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.divider {
+    width: 1px;
+    height: 14px;
+    background-color: var(--border);
+}
+
+.tagline {
+    font-family: "Playfair Display", serif;
+    font-size: 0.9rem;
+    font-style: italic;
+    color: var(--secondary-text-color);
+    letter-spacing: 0.3px;
+}
+
+
+
+main {
+    padding-block: 40px;
+}
+
+.cards-container {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 28px;
+    align-items: stretch;
+}
+
+
+
+.card {
+    width: 350px;
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    cursor: pointer;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(13,27,42,0.1);
+}
+
+.card-header {
+    position: relative;
+    overflow: hidden;
+}
+
+.card-header img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.card:hover .card-header img {
+    transform: scale(1.04);
+}
+
+.card-tag {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background-color: var(--accent-color);
+    color: #fff;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 3px;
+}
+
+.card-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+}
+
+.news-source {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+.card-content h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.45;
+    color: var(--primary-text-color);
+}
+
+.news-desc {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--secondary-text-color);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.card-footer {
+    margin-top: auto;
+    padding-top: 12px;
+    border-top: 1px solid var(--border);
+}
+
+.read-more {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    letter-spacing: 0.5px;
+    transition: gap 0.2s ease;
+}
+
+.card:hover .read-more {
+    text-decoration: underline;
+}
+
+/* =========================================
+   EMPTY STATE
+   ========================================= */
+
+.empty-state {
+    width: 100%;
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--secondary-text-color);
+}
+
+.empty-state h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+    color: var(--primary-text-color);
+}
+
+/* =========================================
+   SCROLLBAR
+   ========================================= */
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 10px;
+}
+
+/* =========================================
+   ANIMATIONS
+   ========================================= */
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.card {
+    animation: fadeUp 0.4s ease both;
+}
